@@ -40,6 +40,9 @@ body {
   width: 100%;
   height: 55rem;
 }
+.slide-element--2 {
+  display: none;
+}
 .slide-element__text {
   background-image: url(../images/pattern-quotes.svg);
   background-repeat: no-repeat;

@@ -26,15 +26,40 @@
         <img src="images/image-tanya.jpg" alt="Tanya">
 
         <div class="button">
-          <div class="button--1">
-            <img src="images/icon-prev.svg" alt="Previous">
+          <div class="button--1" onclick="prevSlide()">
+            <img src="images/icon-prev.svg"  alt="Previous">
           </div>
-          <div class="button--2">
+          <div class="button--2" onclick="nextSlide()">
             <img src="images/icon-next.svg" alt="Next">
           </div>
         </div>
       </div>
     </div>
+
+    <div class="slide-element--1 slide-element--2">
+
+      <div class="slide-element__text">
+        <p>  “ If you want to lay the best foundation possible I’d recommend taking this course.
+          The depth the instructors go into is incredible. I now feel so confident about
+          starting up as a professional developer. ”</p>
+        <span class="slide-element__text--name">John Tarkpor</span>
+        <span class="slide-element__text--profession">Junior Front-end Developer</span>
+      </div>
+
+      <div class="slide-element__picture">
+        <img src="images/image-john.jpg" alt="Tanya">
+
+        <div class="button">
+          <div class="button--1">
+            <img src="images/icon-prev.svg"  onclick="prevSlide()" alt="Previous">
+          </div>
+          <div class="button--2">
+            <img src="images/icon-next.svg" onclick="nextSlide()" alt="Next">
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
@@ -51,5 +76,7 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   -->
+
+  <script src="script/main.js" charset="utf-8"></script>
 </body>
 </html>
