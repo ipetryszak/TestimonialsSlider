@@ -45,12 +45,13 @@ body {
   background-repeat: no-repeat;
   background-position-x: 20%;
   background-size: 16%;
-  padding-top: 5%;
   width: 57%;
   font-size: 3rem;
   font-weight: 300;
+  padding-top: 5%;
   color: #202046;
   align-self: center;
+  z-index: 2;
 }
 .slide-element__text p {
   padding-bottom: 2rem;
@@ -64,22 +65,146 @@ body {
   font-size: 1.6rem;
 }
 .slide-element__picture {
-  width: 50%;
   background-image: url(../images/pattern-bg.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width: 50%;
   position: relative;
   margin-left: -12rem;
-  z-index: -1;
+  z-index: 1;
 }
 .slide-element__picture img {
   display: inline-block;
-  width: 75%;
+  max-width: 75%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.button {
+  display: flex;
+  position: absolute;
+  left: 18%;
+  bottom: 11%;
+  z-index: 1;
+  width: 10rem;
+  height: 4.8rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+}
+.button--1 {
+  width: 50%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  left: 0;
+}
+.button--1:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+.button--2 {
+  width: 50%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  right: 0;
+}
+.button--2:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+.button img {
+  position: inherit;
+  width: 1rem;
+  display: inline-block;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 45%;
+  }
+
+  .slide-element {
+    background-size: 60%;
+    background-position-y: 100%;
+    padding: 5rem 2rem 4rem 2rem;
+  }
+  .slide-element--1 {
+    flex-direction: column;
+    height: auto;
+  }
+  .slide-element__picture {
+    order: 1;
+    margin-left: 0;
+    width: 100%;
+    padding: 5rem;
+  }
+  .slide-element__picture img {
+    display: inline-block;
+    max-width: 90%;
+    position: relative;
+    transform: translate(-50%);
+  }
+  .slide-element__text {
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 0;
+    background-size: 16%;
+    order: 2;
+    width: 100%;
+    padding: 4rem 1rem 8rem 1rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+  .slide-element__text span {
+    display: block;
+  }
+
+  .button {
+    left: 40%;
+    bottom: 5%;
+    z-index: 1;
+    width: 12rem;
+    height: 5.8rem;
+  }
+  .button--1 {
+    width: 50%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+  }
+  .button--1:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+  }
+  .button--2 {
+    width: 50%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    right: 0;
+  }
+  .button--2:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+  }
+  .button img {
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, 0);
+    width: 1.6rem;
+    display: inline-block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

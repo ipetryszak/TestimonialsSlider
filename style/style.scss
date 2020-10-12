@@ -7,10 +7,25 @@
   box-sizing: inherit;
 }
 
+@mixin buttonConf {
+  width: 50%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  }
+
+@mixin buttonHoverTransform {
+  &:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+  }
+}
+
 html {
   font-size: 62.5%;
-
 }
+
 body {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -25,11 +40,10 @@ body {
   background-position-x: left;
   background-position-y: bottom;
   background-size: 40%;
+
   max-width: 1150px;
   margin: 0 auto;
   padding: 10rem 2rem 4rem 10rem;
-
-
 
   &--1 {
     display: flex;
@@ -41,17 +55,18 @@ body {
     background-repeat: no-repeat;
     background-position-x: 20%;
     background-size: 16%;
-    padding-top: 5%;
+
     width: 57%;
     font-size: 3rem;
     font-weight: 300;
+    padding-top: 5%;
     color: hsl(240, 38%, 20%);
     align-self: center;
+    z-index: 2;
 
     p {
       padding-bottom: 2rem;
     }
-
 
     &--name {
       font-size: 1.6rem;
@@ -64,25 +79,134 @@ body {
   }
 
   &__picture {
-    width: 50%;
     background-image: url(../images/pattern-bg.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    width: 50%;
     position: relative;
     margin-left: -12rem;
-    z-index: -1;
-
+    z-index: 1;
 
     img {
       display: inline-block;
-      width: 75%;
+      max-width: 75%;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-
     }
   }
+}
 
+.button {
+  display: flex;
+  position: absolute;
+  left: 18%;
+  bottom: 11%;
+  z-index: 1;
+  width: 10rem;
+  height: 4.8rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 0 1rem 4rem rgba(black,0.4);
+
+  &--1 {
+    @include buttonConf;
+    left: 0;
+    @include buttonHoverTransform;
+
+  }
+
+  &--2 {
+    @include buttonConf;
+    right: 0;
+    @include buttonHoverTransform;
+  }
+
+  img {
+    position: inherit;
+    width: 1rem;
+    display: inline-block;
+  }
+
+}
+@media screen and (max-width: 800px) {
+
+  html {
+    font-size: 45%;
+  }
+
+  .slide-element {
+    background-size: 60%;
+    background-position-y: 100%;
+    padding: 5rem 2rem 4rem 2rem;
+
+    &--1 {
+      flex-direction: column;
+      height: auto;
+    }
+
+    &__picture {
+      order: 1;
+      margin-left: 0;
+      width: 100%;
+      padding: 5rem;
+
+      img {
+        display: inline-block;
+        max-width: 90%;
+        position: relative;
+        transform: translate(-50%);
+      }
+    }
+
+    &__text {
+      background-image: url(../images/pattern-quotes.svg);// url(../images/pattern-curve.svg);
+      background-repeat: no-repeat;
+      background-position-x: 50%;//, 0;
+      background-position-y: 0;//, bottom;
+      background-size: 16%;//, 60%;
+
+      order: 2;
+      width: 100%;
+      padding: 4rem 1rem 8rem 1rem;
+      margin-top: 4rem;
+      text-align: center;
+
+      span {
+        display: block;
+      }
+    }
+
+  }
+
+  .button {
+    left: 40%;
+    bottom: 5%;
+    z-index: 1;
+    width: 12rem;
+    height: 5.8rem;
+
+    &--1 {
+      @include buttonConf;
+      left: 0;
+      @include buttonHoverTransform;
+
+    }
+
+    &--2 {
+      @include buttonConf;
+      right: 0;
+      @include buttonHoverTransform;
+    }
+    img {
+      position: absolute;
+      top: 30%;
+      transform: translate(-50%,0);
+      width: 1.6rem;
+      display: inline-block;
+    }
+  }
 }
