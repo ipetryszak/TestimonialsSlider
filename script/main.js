@@ -2,11 +2,11 @@ let num = 0;
 const el = document.querySelectorAll('.slide-element--1');
 
 function nextSlide(e) {
-    num < (el.length-1) ? changeSlide(e,++num) : changeSlide(e,0);
+    num < (el.length-1) ? changeSlide(e,++num) : changeSlide(e,num = 0);
 }
 
 function prevSlide(e) {
-    num > 0 ? changeSlide(e,--num) : changeSlide(e,el.length - 1);
+    num > 0 ? changeSlide(e,--num) : changeSlide(e,num = el.length - 1);
 }
 
 function changeSlide(e,num) {
